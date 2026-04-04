@@ -1,0 +1,75 @@
+<!-- wp:template-part {"slug":"header","theme":"studio-chao","tagName":"header"} /-->
+
+<!-- wp:group {"tagName":"main"} -->
+<main class="wp-block-group">
+
+<!-- wp:group {"className":"projetos-hero","layout":{"type":"full"}} -->
+<div class="wp-block-group projetos-hero">
+<!-- wp:shortcode -->
+[hero_projetos]
+<!-- /wp:shortcode -->
+</div>
+<!-- /wp:group -->
+
+<!-- wp:group {"className":"projetos-intro","layout":{"type":"constrained"}} -->
+<div class="wp-block-group projetos-intro">
+<!-- wp:columns {"verticalAlignment":"bottom"} -->
+<div class="wp-block-columns are-vertically-aligned-bottom">
+<!-- wp:column {"width":"60%"} -->
+<div class="wp-block-column" style="flex-basis:60%">
+<!-- wp:heading {"level":1,"className":"projetos-titulo"} -->
+<h1 class="wp-block-heading projetos-titulo">Nossos<br><strong>projetos</strong>.</h1>
+<!-- /wp:heading -->
+</div>
+<!-- /wp:column -->
+<!-- wp:column {"width":"40%"} -->
+<div class="wp-block-column" style="flex-basis:40%">
+<!-- wp:paragraph {"className":"projetos-intro-texto"} -->
+<p class="projetos-intro-texto">Cada projeto nasce de uma história. Aqui você encontra propósito, técnica e muita personalidade.</p>
+<!-- /wp:paragraph -->
+</div>
+<!-- /wp:column -->
+</div>
+<!-- /wp:columns -->
+</div>
+<!-- /wp:group -->
+
+<!-- wp:shortcode -->
+[filtro_projetos]
+<!-- /wp:shortcode -->
+
+<!-- wp:group {"className":"projetos-grid-section","layout":{"type":"constrained"}} -->
+<div class="wp-block-group projetos-grid-section">
+<!-- wp:query {"query":{"postType":"projetos","perPage":12,"order":"desc","orderBy":"date","inherit":true},"layout":{"type":"default"}} -->
+<div class="wp-block-query">
+<!-- wp:post-template {"layout":{"type":"grid","columnCount":4}} -->
+<!-- wp:group {"className":"projeto-card"} -->
+<div class="wp-block-group projeto-card">
+<!-- wp:post-featured-image {"isLink":true,"aspectRatio":"3/4"} /-->
+<!-- wp:post-title {"isLink":true,"level":3} /-->
+<!-- wp:post-permalink {"className":"projeto-vermais"} -->
+<a class="projeto-vermais">ver mais</a>
+<!-- /wp:post-permalink -->
+</div>
+<!-- /wp:group -->
+<!-- /wp:post-template -->
+
+<!-- wp:query-pagination {"layout":{"type":"flex","justifyContent":"space-between"},"style":{"spacing":{"margin":{"top":"3rem"}}}} -->
+<!-- wp:query-pagination-previous {"label":"← voltar"} /-->
+<!-- wp:query-pagination-next {"label":"ver mais"} /-->
+<!-- /wp:query-pagination -->
+
+<!-- wp:query-no-results -->
+<!-- wp:paragraph -->
+<p>Nenhum projeto encontrado.</p>
+<!-- /wp:paragraph -->
+<!-- /wp:query-no-results -->
+</div>
+<!-- /wp:query -->
+</div>
+<!-- /wp:group -->
+
+</main>
+<!-- /wp:group -->
+
+<!-- wp:template-part {"slug":"footer","theme":"studio-chao","tagName":"footer"} /-->
