@@ -606,6 +606,65 @@ add_shortcode('qs_socias', function() {
     return $out;
 });
 
+// ========================
+// SCHEMA MARKUP
+// ========================
+
+add_action('wp_head', function() {
+    $schema = [
+        '@context'        => 'https://schema.org',
+        '@type'           => ['LocalBusiness', 'ProfessionalService'],
+        'name'            => 'Studio Chão',
+        'alternateName'   => 'Studio Chão Arquitetura e Interiores',
+        'description'     => 'Escritório de arquitetura e interiores em Fortaleza, CE. Projetos residenciais, corporativos e comerciais com propósito, sensibilidade e identidade. Fundado por Neuza Osório e Luana Bezerra.',
+        'url'             => 'https://studiochao.com.br',
+        'logo'            => get_stylesheet_directory_uri() . '/assets/images/logo-loader.svg',
+        'telephone'       => '+55-85-98933-7852',
+        'email'           => 'contato@studiochao.com.br',
+        'address'         => [
+            '@type'           => 'PostalAddress',
+            'streetAddress'   => 'Av. Antônio Sales, 3169 - sala 102 e 103',
+            'addressLocality' => 'Fortaleza',
+            'addressRegion'   => 'CE',
+            'postalCode'      => '60135-203',
+            'addressCountry'  => 'BR',
+        ],
+        'geo' => [
+            '@type'     => 'GeoCoordinates',
+            'latitude'  => '-3.7327',
+            'longitude' => '-38.5016',
+        ],
+        'areaServed'      => 'Fortaleza, Ceará, Brasil',
+        'serviceType'     => ['Arquitetura Residencial', 'Arquitetura Corporativa', 'Arquitetura Comercial', 'Design de Interiores'],
+        'founder'         => [
+            [
+                '@type'    => 'Person',
+                'name'     => 'Neuza Osório',
+                'jobTitle' => 'Arquiteta e Sócia',
+            ],
+            [
+                '@type'    => 'Person',
+                'name'     => 'Luana Bezerra',
+                'jobTitle' => 'Arquiteta e Sócia',
+            ],
+        ],
+        'sameAs' => [
+            'https://www.instagram.com/studiochao',
+            'https://www.facebook.com/studiochao',
+        ],
+        'openingHoursSpecification' => [
+            [
+                '@type'     => 'OpeningHoursSpecification',
+                'dayOfWeek' => ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+                'opens'     => '09:00',
+                'closes'    => '18:00',
+            ],
+        ],
+    ];
+
+    echo '<script type="application/ld+json">' . wp_json_encode($schema, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT) . '</script>' . "\n";
+});
+
 add_action('wp_footer', function() {
 ?>
 
@@ -684,7 +743,6 @@ if (lightbox) {
     let images = [];
     let current = 0;
 
-    // Coleta todas as imagens da galeria
     const galeriaImgs = document.querySelectorAll('.galeria-feed img');
     galeriaImgs.forEach(function(img, index) {
         images.push(img.dataset.src || img.src);
@@ -723,7 +781,6 @@ if (lightbox) {
     closeBtn.addEventListener('click', closeLightbox);
     overlay.addEventListener('click', closeLightbox);
 
-    // Fechar com ESC e navegar com setas do teclado
     document.addEventListener('keydown', function(e) {
         if (!lightbox.classList.contains('is-open')) return;
         if (e.key === 'Escape') closeLightbox();
