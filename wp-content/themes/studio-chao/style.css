@@ -85,8 +85,8 @@ header .wp-block-navigation a {
 }
 
 header .wp-block-navigation a:hover {
-  color: #fdca78 !important;
-  border-bottom-color: #fdca78 !important;
+  color: #d1bfab !important;
+  border-bottom-color: #d1bfab !important;
 }
 
 header .wp-block-navigation a[href*="whatsapp"] {
@@ -94,8 +94,8 @@ header .wp-block-navigation a[href*="whatsapp"] {
 }
 
 header .wp-block-navigation a[href*="whatsapp"]:hover {
-  color: #fdca78 !important;
-  border-bottom-color: #fdca78 !important;
+  color: #d1bfab !important;
+  border-bottom-color: #d1bfab !important;
 }
 /* ========================
    HEADER — DROPDOWN SUBMENU
@@ -117,7 +117,7 @@ header .wp-block-navigation .wp-block-navigation__submenu-container a {
 }
 
 header .wp-block-navigation .wp-block-navigation__submenu-container a:hover {
-  color: #fdca78 !important;
+  color: #d1bfab !important;
   background-color: rgba(23, 23, 23, 0.04) !important;
 }
 header .wp-block-navigation__submenu-icon svg {
@@ -248,7 +248,7 @@ header .wp-block-navigation__submenu-icon svg {
 
 .hero-link a {
   color: #171717 !important;
-  background-color: #fdca78 !important;
+  background-color: #d1bfab !important;
   padding: 1rem 1.5rem !important;
   font-size: .8rem !important;
   line-height: 12px !important;
@@ -343,7 +343,7 @@ header .wp-block-navigation__submenu-icon svg {
 }
 
 .intro-section h2 strong {
-  background: linear-gradient(to top, #fdca78 80%, transparent 80%) !important;
+  background: linear-gradient(to top, #d1bfab 80%, transparent 80%) !important;
   padding: 0 0.1em !important;
   font-weight: 600 !important;
   box-decoration-break: clone !important;
@@ -403,7 +403,7 @@ header .wp-block-navigation__submenu-icon svg {
 
 .projetos-grid-section .wp-block-post-template {
   display: grid !important;
-  grid-template-columns: repeat(4, 1fr) !important;
+  grid-template-columns: repeat(3, 1fr) !important;
   gap: 1rem !important;
 }
 
@@ -1101,7 +1101,7 @@ cta-section h2 strong {
 }
 
 .cta-section .wp-block-button__link {
-  background-color: #fdca78 !important;
+  background-color: #d1bfab !important;
   color: #171717 !important;
   border-radius: 0 !important;
   padding: 0.875rem 2.5rem !important;
@@ -1780,7 +1780,7 @@ footer.wp-block-template-part > .wp-block-group {
     display: inline-block !important;
     margin-top: 0.5rem !important;
     padding: 0.75rem 2rem !important;
-    background-color: #fdca78 !important;
+    background-color: #d1bfab !important;
     color: #171717 !important;
     font-family: "Poppins", sans-serif !important;
     font-size: 0.75rem !important;

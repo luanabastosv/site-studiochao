@@ -49,6 +49,18 @@ add_action('init', function() {
     ]);
 });
 
+add_action('wp_dashboard_setup', function() {
+    wp_add_dashboard_widget(
+        'tutorial_video',
+        'Tutorial — Studio Chão',
+        function() {
+            ?>
+            <iframe width="100%" height="315" src="https://www.youtube.com/embed/nyX1t9oR11g" frameborder="0" allowfullscreen></iframe>
+            <?php
+        }
+    );
+});
+
 // Registrar CPT: Equipe
 add_action('init', function() {
     register_post_type('equipe', [
@@ -312,6 +324,7 @@ add_shortcode('fp_quemsomos_texto', function() {
 add_shortcode('single_meta', function() {
     $localizacao = get_field('localizacao');
     $area        = get_field('area');
+    $data_conclusao = get_field('data_conclusao');
     $fotografo   = get_field('fotografo');
     $servico     = get_field('servico');
     $cats        = get_the_terms(get_the_ID(), 'categoria-projeto');
@@ -347,6 +360,11 @@ add_shortcode('single_meta', function() {
         <span class="single-meta-label">Área</span><?php echo esc_html($area); ?>
     </p>
     <?php endif; ?>
+    <?php if ($data_conclusao): ?>
+<p class="single-meta-item">
+    <span class="single-meta-label">Conclusão</span><?php echo esc_html($data_conclusao); ?>
+</p>
+<?php endif; ?>
     <?php if ($fotografo): ?>
     <p class="single-meta-item">
         <span class="single-meta-label">Fotos</span><?php echo esc_html($fotografo); ?>
